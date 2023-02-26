@@ -1,10 +1,18 @@
 import './style.css'
+import { arbok } from './pokemones/arbok'
+import arbokImg from './img/arbok.png'
+import pikachuImg from './img/pikachu.png'
+import { pikachu } from './pokemones/pikachu'
 
-import { CheyoApi } from './pokemones/apiCheyo'
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <h1>Mostrando imagen de perrito</h1>
-  
-  ${CheyoApi.prototype.getImagePerrito()}
+<div class>
+<h1>${arbok.name}</h1>
+<img src="${arbokImg}" class="logo vanilla" alt="TypeScript logo" />
+
+<h1>${pikachu.name}</h1>
+<img src="${pikachuImg}" class="logo vanilla" alt="TypeScript logo" />
+</div>
+
 `
 
 document.querySelector<HTMLButtonElement>('#counter')!
