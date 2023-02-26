@@ -1,31 +1,29 @@
 import axios from 'axios';
-import { PokeAPIResponse } from '../interfaces/apiResponse.interface';
-export class Pokemones{
+import { ArbokAPIResponse } from '../interfaces/arbokResponse.interface';
+export class PokemonArbok{
     constructor(public id: number, public name: string){}
     
     async getTypes(){
-        const {data} = await axios.get<PokeAPIResponse>('https://pokeapi.co/api/v2/pokemon/24');
-        console.log(`Type-> ${data.types[0].type.name}`);
+        const {data} = await axios.get<ArbokAPIResponse>('https://pokeapi.co/api/v2/pokemon/24');
+        console.log(`name-> ${data.name}`);
     }
     
-    async getMoves(){
-        const {data} = await axios.get<PokeAPIResponse>('https://pokeapi.co/api/v2/pokemon/24');
-        console.log(`Move-> ${data.moves[0].move.name}`);   
-        return data.moves
+    // async getMoves(){
+    //     const {data} = await axios.get<ArbokAPIResponse>('https://pokeapi.co/api/v2/pokemon/24');
+    //     console.log(`Arbok Move-> ${data.moves[0].move.name}`);   
+    //     return data.moves
 
-    }
-    async getAbilities(){
-        const {data} = await axios.get<PokeAPIResponse>('https://pokeapi.co/api/v2/pokemon/24');
-        console.log(`Avilities-> ${data.abilities[0].ability.name}`);
-    }   
+    // }
+    // async getAbilities(){
+    //     const {data} = await axios.get<ArbokAPIResponse>('https://pokeapi.co/api/v2/pokemon/24');
+    //     console.log(`Arbok Avilities-> ${data.abilities[0].ability.name}`);
+    // }   
 }
-export const arbok = new Pokemones(24, 'Arbok');
-//Arbok con el mentodo getMoves
-console.log(arbok.getMoves());
-//Arbok con el mentodo getTypes
+export const arbok = new PokemonArbok(24, 'Arbok');
+
+// console.log(arbok.getMoves());
 console.log(arbok.getTypes());
-//Arbok con el mentodo getTypes
-console.log(arbok.getAbilities());
+// console.log(arbok.getAbilities());
 
 
 // getCharacterOfApi{

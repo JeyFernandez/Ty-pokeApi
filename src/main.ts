@@ -1,10 +1,10 @@
 import './style.css'
-import { arbok } from './pokemones/arbok'
-import { Pokemones } from './pokemones/arbok'
+
+import { CheyoApi } from './pokemones/apiCheyo'
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <h1>Hola pokemones</h1>
-  <h2>Name: ${arbok.name}</h2>
-  <h2>Move: </h2>
+  <h1>Mostrando imagen de perrito</h1>
+  
+  ${CheyoApi.prototype.getImagePerrito()}
 `
 
 document.querySelector<HTMLButtonElement>('#counter')!
